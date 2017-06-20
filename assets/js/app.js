@@ -27,7 +27,28 @@ function initMap(){
 
 
 	document.getElementById("encuentrame").addEventListener("click",buscar);
-	document.getElementById("ruta").addEventListener("click",buscar);
+
+	document.getElementById("ruta").addEventListener("click",function(){
+		var directionsService = new google.maps.DirectionsService;
+		var directionsDisplay = new google.maps.DirectionsRenderer;
+
+		directionsDisplay.setMap(map);
+
+		var inicio = document.getElementById("origen").value;
+		var fin = document.getElementById("destino").value;
+
+		var request = {
+			origin: inicio,
+			destination: fin,
+			travelMode: "DRIVING"
+		};
+
+		directionsService.route(request, function(result, status){
+			if (status == "OK"){
+				directionsDisplay.setDirections(result);
+			}
+		})
+	});
 
 
 	var latitud, longitud;
@@ -35,10 +56,12 @@ function initMap(){
 		latitud = posicion.coords.latitude;
 		longitud = posicion.coords.longitude;
 
+		var icono = "http://maps.google.com/mapfiles/kml/shapes/"
 		var miUbicacion = new google.maps.Marker({
 			position: {lat:latitud, lng:longitud},
 			animation: google.maps.Animation.DROP,
-			map: map
+			map: map,
+			icon: icono + "cycling.png"
 		});
 
 		map.setZoom(17);
