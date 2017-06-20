@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Easy Vreco</title>
+	<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600" rel="stylesheet">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+	<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body>
+		<section>
+		<div class="row">
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+				<button id="encuentrame">Encuéntrame</button>
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<label for="">Origen:</label>
+				<input type="text">
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12">
+				<label for="">Destino:</label>
+				<input type="text">
+			</div>
+			<div class="col-lg-3 col-md-3 col-sm-12 col-xs-12 text-center">
+				<button id="ruta">Ruta</button>
+			</div>
+		</div>
+		<div class="row">
+			<div class="col-md-12 col-sm-12" id="map">
+				<!-- aca va el mapa -->
+			</div>
+		</div>
+	</section>
+
+	<script async defer src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCJpSCQDRfkdmFG4QkGRrumlf3wtJdY6_A&callback=initMap"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+	
+	<script src="assets/js/app.js"></script>
+</body>
+</html>
